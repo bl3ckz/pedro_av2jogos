@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos Escolares - Sistema de Pontuação</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS será criado depois -->
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Pontuação - Jogos Escolares</h1>
+    </header>
+
+    <main>
+        <!-- Cadastro de Jogador -->
+        <section id="cadastro-jogador">
+            <h2>Cadastrar Jogador</h2>
+            <form id="formCadastro">
+                <input type="text" id="nomeJogador" placeholder="Nome do Jogador" required>
+                <input type="number" id="idadeJogador" placeholder="Idade" required>
+                <input type="text" id="modalidadeJogador" placeholder="Modalidade" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Registro de Partida -->
+        <section id="registro-partida">
+            <h2>Registrar Partida e Pontos</h2>
+            <form id="formPartida">
+                <input type="text" id="nomePartida" placeholder="Nome do Jogador" required>
+                <input type="number" id="pontosPartida" placeholder="Pontos Marcados" required>
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+        <!-- Ranking -->
+        <section id="ranking">
+            <h2>Ranking dos Melhores Jogadores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th>Modalidade</th>
+                        <th>Pontuação</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingTable">
+                    <!-- Dados vão ser inseridos via JS -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script> <!-- JS será criado depois -->
+
+</body>
+</html>
