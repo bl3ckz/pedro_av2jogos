@@ -1,60 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogos Escolares - Sistema de Pontuação</title>
-    <link rel="stylesheet" href="style.css"> <!-- CSS será criado depois -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking de Jogos Escolares</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1> Ranking de Jogos Escolares</h1>
+    <nav>
+      <button onclick="mostrarSecao('cadastroJogador')">Cadastro de Jogador</button>
+      <button onclick="mostrarSecao('registroPartida')">Registro de Partida</button>
+      <button onclick="mostrarSecao('ranking')">Ranking</button>
+    </nav>
+  </header>
 
-    <header>
-        <h1>Sistema de Pontuação - Jogos Escolares</h1>
-    </header>
+  <main>
+    <!-- Cadastro de Jogador -->
+    <section id="cadastroJogador" class="secao ativa">
+      <h2>Cadastro de Jogador</h2>
+      <form id="formCadastroJogador">
+        <label for="nomeJogador">Nome:</label>
+        <input type="text" id="nomeJogador" required>
 
-    <main>
-        <!-- Cadastro de Jogador -->
-        <section id="cadastro-jogador">
-            <h2>Cadastrar Jogador</h2>
-            <form id="formCadastro">
-                <input type="text" id="nomeJogador" placeholder="Nome do Jogador" required>
-                <input type="number" id="idadeJogador" placeholder="Idade" required>
-                <input type="text" id="modalidadeJogador" placeholder="Modalidade" required>
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
+        <label for="idadeJogador">Idade:</label>
+        <input type="number" id="idadeJogador" required>
 
-        <!-- Registro de Partida -->
-        <section id="registro-partida">
-            <h2>Registrar Partida e Pontos</h2>
-            <form id="formPartida">
-                <input type="text" id="nomePartida" placeholder="Nome do Jogador" required>
-                <input type="number" id="pontosPartida" placeholder="Pontos Marcados" required>
-                <button type="submit">Registrar</button>
-            </form>
-        </section>
+        <label for="turmaJogador">Turma:</label>
+        <input type="text" id="turmaJogador" required>
 
-        <!-- Ranking -->
-        <section id="ranking">
-            <h2>Ranking dos Melhores Jogadores</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Nome</th>
-                        <th>Modalidade</th>
-                        <th>Pontuação</th>
-                    </tr>
-                </thead>
-                <tbody id="rankingTable">
-                    <!-- Dados vão ser inseridos via JS -->
-                </tbody>
-            </table>
-        </section>
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="listaJogadores"></div>
+    </section>
 
-    </main>
+    <!-- Registro de Partida -->
+    <section id="registroPartida" class="secao">
+      <h2>Registro de Partida</h2>
+      <form id="formRegistroPartida">
+        <label for="jogadorSelecionado">Jogador:</label>
+        <select id="jogadorSelecionado" required></select>
 
-    <script src="script.js"></script> <!-- JS será criado depois -->
+        <label for="pontos">Pontos Marcados:</label>
+        <input type="number" id="pontos" required>
 
+        <label for="dataPartida">Data da Partida:</label>
+        <input type="date" id="dataPartida" required>
+
+        <button type="submit">Registrar Partida</button>
+      </form>
+      <div id="listaPartidas"></div>
+    </section>
+
+    <!-- Ranking -->
+    <section id="ranking" class="secao">
+      <h2>Ranking de Jogadores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Jogador</th>
+            <th>Turma</th>
+            <th>Pontos Totais</th>
+            <th>Partidas</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaRanking">
+          <!-- Conteúdo gerado por JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sistema de Jogos Escolares. Desenvolvido por Pedro Dantas</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
